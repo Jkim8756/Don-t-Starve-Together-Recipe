@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "belisa_plumilla";
+  src: url("/fonts/belisa_plumilla.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #1a1208;
+  --foreground: #e8d5b0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-dst-brown: #3d2b1f;
+  --color-dst-gold: #c8a84b;
+  --color-dst-dark: #1a1208;
+  --color-dst-parchment: #e8d5b0;
+  --color-warly-accent: #f9a825;
+  --font-dst: "belisa_plumilla", serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  background-image: url("/image/background5.png");
+  background-repeat: repeat;
+  background-size: auto;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Scrollbar styling for DST theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1208;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d2b1f;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c8a84b;
+}
+
+/* Dialog/Modal backdrop */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+dialog[open] {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  max-height: 90vh;
+}
+
+@media (max-width: 767px) {
+  dialog[open] {
+    margin: auto auto 0 auto;
+    max-height: 85dvh;
+    width: 100%;
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+}
+
+/* Range input styling */
+input[type="range"] {
+  accent-color: #c8a84b;
+}
